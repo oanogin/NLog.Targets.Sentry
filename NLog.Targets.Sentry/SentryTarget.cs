@@ -4,6 +4,7 @@ using SharpRaven;
 using SharpRaven.Data;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Globalization;
 using System.Linq;
 
@@ -272,14 +273,27 @@ namespace NLog.Targets
             var ravenClient = new RavenClient(this.dsn)
             {
                 ErrorOnCapture = this.LogException,
-                Timeout = this.clientTimeout,
-                Environment = this.Environment,
                 Release = GetVersion(),
             };
 
+            string timeoutSetting = ConfigurationManager.AppSettings["RavenClient.Timeout"];
+            TimeSpan timeout;
+
+            if ((false == string.IsNullOrWhiteSpace(timeoutSetting)) && TimeSpan.TryParseExact(timeoutSetting, "c", CultureInfo.InvariantCulture, out timeout))
+            {
+                ravenClient.Timeout = timeout;
+            }
+
+            string environment = ConfigurationManager.AppSettings["RavenClient.Environment"];
+
+            if (false == string.IsNullOrWhiteSpace(environment))
+            {
+                ravenClient.Environment = environment;
+            }
+
             if (string.IsNullOrWhiteSpace(ravenClient.Environment))
             {
-                ravenClient.Environment = "develop";
+                ravenClient.Environment = "local";
             }
 
             if (TimeSpan.Zero == ravenClient.Timeout)

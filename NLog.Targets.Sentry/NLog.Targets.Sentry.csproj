@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>NLog.Targets.Sentry</RootNamespace>
-    <AssemblyName>NLog.Targets.Sentry3</AssemblyName>
-    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <AssemblyName>NLog.Targets.Sentry4</AssemblyName>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
@@ -12,18 +12,18 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyVersion>3.1.0</AssemblyVersion>
-    <Version>3.1.0</Version>
-    <Authors>Bjarne Riis, Mike Dempster, Thomas Willson (Curtis Instruments)</Authors>
-    <PackageLicenseUrl>https://github.com/CurtisInstruments/NLog.Targets.Sentry/blob/master/License.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/CurtisInstruments/NLog.Targets.Sentry</PackageProjectUrl>
-    <Description>Custom target for NLog enabling you to send logging messages to the Sentry logging service.</Description>
+    <AssemblyVersion>4.0.0</AssemblyVersion>
+    <Version>4.0.0</Version>
+    <Authors>Nogin Oleg</Authors>
+    <PackageLicenseUrl>https://github.com/oanogin/NLog.Targets.Sentry/blob/master/License.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/oanogin/NLog.Targets.Sentry</PackageProjectUrl>
+    <Description>Custom target for NLog enabling you to send logging messages to the Sentry logging service. (only .net core)</Description>
     <PackageTags>NLog Sentry Log Logging</PackageTags>
     <PackageReleaseNotes>- Allow NLog to handle exceptions (retry/fallback) (#1)
 - Reduced memory allocation when handling LogEvent Properties (When no exception) (#1)
 - Added handling of null-values in LogEvent Properties. (#1)</PackageReleaseNotes>
     <Company>Curtis Instruments</Company>
-    <RepositoryUrl>https://github.com/CurtisInstruments/NLog.Targets.Sentry</RepositoryUrl>
+    <RepositoryUrl>https://github.com/oanogin/NLog.Targets.Sentry</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

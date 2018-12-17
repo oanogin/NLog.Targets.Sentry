@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>NLog.Targets.Sentry.UnitTests</RootNamespace>
-    <AssemblyName>NLog.Targets.Sentry3.UnitTests</AssemblyName>
-    <TargetFrameworks>netcoreapp2.1;net45</TargetFrameworks>
+    <AssemblyName>NLog.Targets.Sentry4.UnitTests</AssemblyName>
+    <TargetFrameworks>netcoreapp2.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
